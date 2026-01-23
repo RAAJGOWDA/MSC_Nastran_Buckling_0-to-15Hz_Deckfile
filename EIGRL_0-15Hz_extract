@@ -1,0 +1,28 @@
+SOL 105
+CEND
+ECHO=NONE
+  DISPLACEMENT = ALL
+  STRESS=ALL
+  SPCFORCES=ALL
+SUBCASE       1
+  SUBTITLE  = 1g_down_-ve_z_dir
+  SPC =        100
+  LOAD =       200
+SUBCASE       2
+  SUBTITLE  = Buckling
+  SPC =        100
+  METHOD=500
+BEGIN BULK
+PARAM,AUTOSPC,NO      
+PARAM,MAXRATIO,1.0+8   
+PARAM,POST,-1  
+PARAM, GRDPNT, 0
+$
+include 'include\enter your file name here.bdf'
+$
+EIGRL,500,0.0,15.0,30 {to capture the desired Modes from 0Hz to 15Hz EIGRL, 500,0.0,15.0, 30 being used.}
+SPCADD,100,1
+LOAD,200,1.0,1.0,11
+GRAV,11,0,9810.0, 0.0, 0.0, -1.0
+$
+ENDDATA
