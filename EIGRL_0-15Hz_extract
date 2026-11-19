@@ -18,7 +18,7 @@ PARAM,MAXRATIO,1.0+8
 PARAM,POST,-1  
 PARAM, GRDPNT, 0
 $
-include 'include\enter your file name here.bdf'
+include 'include\$2345678.bdf'
 $
 EIGRL,500,0.0,15.0,30 {to capture the desired Modes from 0Hz to 15Hz EIGRL, 500,0.0,15.0, 30 being used.}
 SPCADD,100,1
